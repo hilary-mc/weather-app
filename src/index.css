@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--border-color: lightgrey;
+	--temp-high-color: darkorange;
+	--temp-low-color: lightseagreen;
+	--link-color: lightseagreen;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+	background-color: grey;
+	height: 10vh;
+}
+
+main {
+	height: 85vh;
+}
+
+footer {
+	background-color:  grey;
+	height: 5vh;
+}
+
+/* Section styles */
+.wrapper {
+	max-width: 1200px;
+}
+.blurb {
+	padding: 1.5rem 2rem;
+	border: 1px solid var(--border-color);
+	border-radius: 3px;
+}
+.data {
+	padding: 1.5rem 2rem;
+	border: 1px solid var(--border-color);
+	border-radius: 3px;
+	background-color: lightcyan;
+	min-height: 70vh;
+}
+
+/* Blurb section styles */
+.blurb p, .blurb h1 {
+	margin-bottom: 1rem;
+}
+.blurb p a {
+	color: var(--link-color);
+}
+.blurb p a:hover {
+	text-decoration: underline;
+}
+
+/* Data section styles */
+.current {			
+	border: 1px solid var(--border-color);
+	margin-bottom: 2rem;
+	padding: 1.5rem;
+	border-radius: 3px;
+	background-color: white;
+}
+.weather-card {
+	background-color: white;
+	border: 1px solid var(--border-color);
+	border-radius: 3px;
+}
+.temp-high {
+	color: var(--temp-high-color);
+}
+.temp-low {
+	color:  var(--temp-low-color);
+}
+
+/* icons */
+.current-icon {
+	font-size: 3rem;
+	color: lightgrey;
+}
+.forecast-icon {
+	font-size: 1.5rem;
+	color: lightgrey;
 }
