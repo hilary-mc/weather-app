@@ -205,10 +205,10 @@ class App extends React.Component {
     const { error, isLoaded, items } = this.state;
 
     return (
-      <div className="wrapper lg:flex w-4/5 mx-auto my-8">
+      <div className="wrapper lg:flex w-4/5 mx-auto py-8">
 
         {/* The blurb section */}
-        <div className="blurb w-full h-max mb-8 lg:w-80 lg:mr-8">
+        <div className="blurb bg-white w-full h-max mb-8 lg:w-80 lg:mr-8 ">
 
           <h1 className="font-semibold text-center">Weather App</h1>
 
@@ -216,14 +216,13 @@ class App extends React.Component {
 
           <p>Nullam pharetra sed diam et vestibulum. Proin porta diam purus, non accumsan sapien vestibulum ut. <a href="https://open-meteo.com" className="normal-link" target="_blank" rel="noreferrer">Open-meteo</a> suspendisse laoreet vitae dolor vel efficitur.</p>
 
-          <div className="flex justify-center">
-            <button className="px-4 py-2 border" onClick={this.invokeNavigator}>Load weather data</button>
+          <div className="flex justify-center ">
+            <button className="cta px-4 py-2 bg-white drop-shadow hover:drop-shadow-sm active:drop-shadow-none focus:outline-none" onClick={this.invokeNavigator}>Check weather</button>
           </div>
-
         </div>
 
         {/* The data output section */}
-        <div className="data h-full lg:flex-1">
+        <div className="data bg-white h-full lg:flex-1">
 
           {/* Used to determine the output */}
           {error ? error : !isLoaded ? 'No data' :
@@ -232,7 +231,7 @@ class App extends React.Component {
             {/* Current weather section */}      
             <h2 className="font-semibold mb-4 text-center lg:text-left">7-day weather forecast</h2>
             <div className="current flex flex-col items-center lg:w-80 mx-auto">
-              <h2 className="mb-2 text-lg text-center">Current weather for your location</h2>
+              <h2 className="mb-2 text-lg text-center font-semibold">Current weather for your location</h2>
               <div className="flex items-center gap-4 mb-4">
                 <FontAwesomeIcon className="current-icon" icon={this.getWeatherIcon(items.current_weather.weathercode)} />
                 <div className="">
@@ -254,11 +253,11 @@ class App extends React.Component {
             </div>
 
           {/* Forecast weather section */}
-            <div className="forecast grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="forecast grid grid-cols-1 md:grid-cols-2 gap-4">
 
               {/* Using map to get day headers, utilising index to get other data */}
               {items.daily.time.slice(1).map((item, index) => (
-                <div key={item} className="weather-card flex flex-col items-center p-2 gap-1">
+                <div key={item} className="weather-card flex flex-col items-center p-5 gap-4">
                   <p className="font-semibold">{this.getWeekday(item)}</p>
                   <div className="flex gap-2">
                     <FontAwesomeIcon className="forecast-icon" icon={this.getWeatherIcon(items.daily.weathercode[index])} />

@@ -3,24 +3,36 @@
 @tailwind utilities;
 
 :root {
+	--page-bg-color: whitesmoke;
+	--box-bg-color: white;
 	--border-color: lightgrey;
 	--temp-high-color: darkorange;
 	--temp-low-color: lightseagreen;
 	--link-color: lightseagreen;
+	--focus-color: darkseagreen;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 nav {
-	background-color: grey;
-	height: 10vh;
+	border-bottom: 1px solid var(--border-color);
+	height: 5vh;
 }
 
 main {
+	background-color: var(--page-bg-color);
 	height: 85vh;
+	flex: 1;
 }
 
 footer {
-	background-color:  grey;
-	height: 5vh;
+	border-top: 1px solid var(--border-color);
+	height: 10vh;
+	margin-top: auto;
 }
 
 /* Section styles */
@@ -36,7 +48,8 @@ footer {
 	padding: 1.5rem 2rem;
 	border: 1px solid var(--border-color);
 	border-radius: 3px;
-	background-color: lightcyan;
+	/*background-color: lightcyan;*/
+	background-image: <>;
 	min-height: 70vh;
 }
 
@@ -50,11 +63,18 @@ footer {
 .blurb p a:hover {
 	text-decoration: underline;
 }
+.blurb p a:focus {
+	outline: 1px solid var(--focus-color);
+}
+.cta {
+	border: 1px solid var(--border-color);
+	border-radius: 3px;
+}
 
 /* Data section styles */
 .current {			
 	border: 1px solid var(--border-color);
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	padding: 1.5rem;
 	border-radius: 3px;
 	background-color: white;
