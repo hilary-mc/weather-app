@@ -3,13 +3,28 @@
 @tailwind utilities;
 
 :root {
-	--page-bg-color: whitesmoke;
+	--page-bg-color: rgb(223, 222, 235);
 	--box-bg-color: white;
-	--border-color: lightgrey;
+	--border-color: lightgray;
 	--temp-high-color: darkorange;
 	--temp-low-color: lightseagreen;
 	--link-color: lightseagreen;
+	--link-hover-color: darkseagreen;
 	--focus-color: darkseagreen;
+	--cta-color: rgb(65, 56, 171);
+}
+
+p, h1, h2 {
+	color: rgb(70, 70, 70);
+}
+
+.blurb p, .under-da-hood p, .blurb h1, .under-da-hood h2 {
+	margin-bottom: 1rem;	
+}
+
+*:focus {
+	outline: none;
+	@apply ring-1 ring-focus-color;
 }
 
 body {
@@ -19,20 +34,29 @@ body {
 }
 
 nav {
-	border-bottom: 1px solid var(--border-color);
 	height: 5vh;
+	border-bottom: 1px solid var(--border-color);
 }
 
 main {
-	background-color: var(--page-bg-color);
-	height: 85vh;
 	flex: 1;
+	background-color: var(--page-bg-color);
+}
+
+main a {
+	color: var(--temp-low-color);
+	transition: color .2s;
+}
+
+main a:hover {
+	color: var(--temp-high-color);
+	transition: color .2s;
 }
 
 footer {
-	border-top: 1px solid var(--border-color);
-	height: 10vh;
+	height: 5vh;
 	margin-top: auto;
+	border-top: 1px solid var(--border-color);
 }
 
 /* Section styles */
@@ -44,31 +68,21 @@ footer {
 	border: 1px solid var(--border-color);
 	border-radius: 3px;
 }
-.data {
+.block-style {
 	padding: 1.5rem 2rem;
 	border: 1px solid var(--border-color);
 	border-radius: 3px;
-	/*background-color: lightcyan;*/
-	background-image: <>;
-	min-height: 70vh;
+	background-color: var(--box-bg-color);
 }
 
 /* Blurb section styles */
-.blurb p, .blurb h1 {
-	margin-bottom: 1rem;
-}
-.blurb p a {
-	color: var(--link-color);
-}
-.blurb p a:hover {
-	text-decoration: underline;
-}
-.blurb p a:focus {
-	outline: 1px solid var(--focus-color);
-}
 .cta {
+	@apply px-4 py-2 drop-shadow hover:drop-shadow-sm active:drop-shadow-none;
 	border: 1px solid var(--border-color);
 	border-radius: 3px;
+	background: var(--cta-color);
+	color: snow;
+
 }
 
 /* Data section styles */
